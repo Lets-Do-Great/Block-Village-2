@@ -34,6 +34,7 @@ const App = () => {
       list.map(item => <li key={item.name}><Link to={item.path}>{item.name}</Link></li>)
     }
     </ul>
+    <hr/>
     <Switch>
       <Route path="/" exact={true}>
         <Main/>
