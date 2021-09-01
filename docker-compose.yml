@@ -1,0 +1,23 @@
+version: '3.0'
+services:
+  frontend:
+    container_name: frontend
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend/docker
+    volumes:
+      - /app/node_modules # 지금 로컬에 없기 때문에 참조하지 않음
+      - ./frontend:/app
+    stdin_open: true
+    ports:
+      - 3000:3000
+
+  backend:
+    container_name: backend
+    build:
+      dockerfile: Dockerfile
+      context: ./backend/docker
+    volumes:
+      - ./backend:/app
+    ports:
+      - 8080:8080

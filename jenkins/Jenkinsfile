@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    try {
+                        echo 'BUILD STARTED'
+                        sh 'docker-compose build'
+                    } catch(e) {
+                        currentBuild.result = "FAILURE"
+                    } finally {
+                        if(currentBuild.result != "FAILURE") {
+                            echo "BUILD SUCCESS #${env.BUILD_NUMBER}"
+                        } else {
+                            echo "BUILD FAIL #${env.BUILD_NUMBER}"
+                        }
+                    }
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'docker-compose up -d'
+            }
+        }
+    }
+}
