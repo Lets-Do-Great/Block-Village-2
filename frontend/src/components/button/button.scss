@@ -1,0 +1,50 @@
+$pink: #ff8896;
+$blue: #88e7ff;
+$yellow: #fff788;
+
+@mixin button-color($color){
+  background: $color;
+  &:hover{
+    background: lighten($color, 10%);
+  }
+  &:active{
+    background: darken($color, 20%);
+    color: white;
+  }
+}
+
+.button {
+  height: 45px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  // border: 2px solid rgb(88, 88, 88);
+  border-radius: 10px;
+  transition: all 0.1s ease-in;
+  cursor: pointer;
+
+  &.large{
+    width: 300px;
+  }
+
+  &.medium{
+    width: 200px;
+  }
+
+  &.small{
+    width: 100px;
+  }
+
+  &.pink{
+    @include button-color($pink);
+  }
+
+  &.blue{
+    @include button-color($blue);
+  }
+
+  &.yellow{
+    @include button-color($yellow);
+  }
+}
