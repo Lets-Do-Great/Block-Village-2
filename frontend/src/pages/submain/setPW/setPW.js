@@ -14,6 +14,7 @@ const SetPW = () => {
         placeholder="NEW PW"  
         {...register("password", { required: true })}
       />
+      {errors.password && "비밀번호를 입력하세요."}
       <Button onClick={onSubmit} color="blue" size="large">SIGN IN</Button>
     </form>
   );

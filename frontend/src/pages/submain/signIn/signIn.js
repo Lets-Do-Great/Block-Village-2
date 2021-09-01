@@ -14,11 +14,13 @@ const SignIn = () => {
         placeholder="E-mail"  
         {...register("email", { required: true })}
       />
+      {errors.email && "이메일은 필수 입력 항목입니다."}
       <input 
         type="password" 
         placeholder="PW"
         {...register("password", { required: true })}
       />
+      {errors.password && "비밀번호는 필수 입력 항목입니다."}
       <Button onClick={onSubmit} color="pink" size="large">SIGN IN</Button>
     </form>
   );

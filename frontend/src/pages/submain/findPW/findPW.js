@@ -14,6 +14,7 @@ const FindPW = () => {
         placeholder="E-mail"  
         {...register("email", { required: true })}
       />
+      {errors.email && "이메일을 입력하세요."}
       <Button onClick={onSubmit} color="pink" size="large">SIGN IN</Button>
     </form>
   );
