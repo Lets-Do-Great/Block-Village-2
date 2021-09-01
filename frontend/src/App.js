@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 import Main from './pages/main/index/main';
-import SubMain from './pages/submain/submain';
+import SubMain from './pages/submain/index/submain';
 import MyPage from './pages/mypage/myPage';
 import Store from './pages/store/index/store';
 import Block from './pages/block/index/block';
