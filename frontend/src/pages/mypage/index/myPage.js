@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Link, Route, useHistory } from 'react-router-dom';
 import Modal from '../../../components/modal/modal';
+import Info from '../info/info';
 
 const MyPage = () => {
   const history = useHistory();
@@ -68,6 +69,7 @@ const MyPage = () => {
         <Route path="/me/info/:mode">
           <Modal close={goToMyPage}>
             내 정보 조회 / 수정
+            <Info/>
           </Modal>
         </Route>
         <Route path="/me/block">
