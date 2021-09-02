@@ -1,7 +1,42 @@
 import React from 'react';
-import { Switch, Link, Route } from 'react-router-dom';
+import { Switch, Link, Route, useHistory } from 'react-router-dom';
+import Modal from '../../../components/modal/modal';
 
 const MyPage = () => {
+  const history = useHistory();
+
+  const goToMyPage = () => {
+    history.goBack();
+  }
+
+  const goToInfoRead = () => {
+    history.push('/me/info/read');
+  }
+
+  const goToInfoUpdate = () => {
+    history.push('/me/info/update');
+  }
+
+  const goToMyBlock = () => {
+    history.push('/me/block');
+  }
+
+  const goToMyMission = () => {
+    history.push('/me/mission');
+  }
+
+  const goToMyMissionDetail= () => {
+    history.push('/me/info/update');
+  }
+
+  const goToMyAnswer = () => {
+    history.push('/me/answer');
+  }
+
+  const goToMyAnswerDetail = () => {
+    history.push('/me/mission');
+  }
+
   return (
     <div>
       <h3>  
@@ -31,16 +66,24 @@ const MyPage = () => {
 
       <Switch>
         <Route path="/me/info/:mode">
-          내 정보 조회 / 수정
+          <Modal close={goToMyPage}>
+            내 정보 조회 / 수정
+          </Modal>
         </Route>
         <Route path="/me/block">
-          내 블록 목록
+          <Modal size="large" close={goToMyPage}>
+            내 블록 목록
+          </Modal>
         </Route>
         <Route path="/me/:type/:id">
-          내 미션 / 답안 상세페이지
+          <Modal size="large" close={goToMyPage}>
+            내 미션 / 답안 상세페이지
+          </Modal>
         </Route>
         <Route path="/me/:type">
-          내 미션 / 답안 목록 
+          <Modal size="large" close={goToMyPage}>
+            내 미션 / 답안 목록 
+          </Modal>
         </Route>
       </Switch>
     </div>
