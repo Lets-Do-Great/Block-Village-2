@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
+import Nav from './components/nav/nav';
 import Main from './pages/main/index/main';
 import SubMain from './pages/submain/submain';
 import MyPage from './pages/mypage/myPage';
@@ -17,13 +18,6 @@ const App = () => {
   const list = [
     { path:"/", name: "메인"},
     { path:"/submain", name: "서브 메인"},
-    { path:"/me", name: "마이 페이지"},
-    { path:"/store", name: "상점"},
-    { path:"/block", name: "블록 제작 화면"},
-    { path:"/tutorial/1", name: "튜토리얼"},
-    { path:"/mission", name: "미션"},
-    { path:"/service", name: "서비스 소개"},
-    { path:"/group", name: "그룹"},
     { path:"/streaming/1/1", name: "스트리밍"},
     { path:"/error", name: "에러"},
   ];
@@ -35,6 +29,7 @@ const App = () => {
     }
     </ul>
     <hr/>
+    <Nav/>
     <Switch>
       <Route path="/" exact={true}>
         <Main/>
