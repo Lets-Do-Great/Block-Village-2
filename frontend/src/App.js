@@ -3,7 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 import Main from './pages/main/index/main';
 import SubMain from './pages/submain/submain';
-import MyPage from './pages/mypage/myPage';
+import MyPage from './pages/mypage/index/myPage';
 import Store from './pages/store/index/store';
 import Block from './pages/block/index/block';
 import Tutorial from './pages/tutorial/tutorial';
